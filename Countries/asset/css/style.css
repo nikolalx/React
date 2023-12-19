@@ -1,0 +1,11 @@
+* {
+    background-color: black;
+    color: white;
+}
+
+#app {
+    display: flex;
+    width: 100px;
+    height: 200px;
+    background-color: black;
+}

@@ -20,6 +20,6 @@
                 "ignoreRestSiblings": false
             }
         ],
-        "quotes": ["error", "double"]
+        "quotes": ["error", "single"]
     }
 }
