@@ -1,0 +1,11 @@
+.svg {
+ width: 40px;   
+ cursor: pointer;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1.5rem;
+  } 
