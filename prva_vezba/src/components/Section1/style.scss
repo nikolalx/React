@@ -1,0 +1,87 @@
+$smallest: 300px;
+$middle: 750px;
+$biggest: 900px;
+
+$textCol: #FFF;
+$circleCol: #ffab4bd2;
+$h1Font: 5vh;
+$pFont: 2vh;
+$fontFam: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.section1 {
+    width: 98%;
+    height: 200vh;
+    margin: 0rem 1rem;
+    position: relative;
+    z-index: 1;
+
+    .circle {
+        position: absolute;
+        background-color: $circleCol;
+        
+        height: $smallest;
+        width: $smallest;
+        border-radius: 50%;
+        top: 20vh;
+        left: 30vh;
+    }
+
+    .circleImg {
+        position: absolute;
+        height: $biggest;
+        width: $biggest;
+        // background-color: aquamarine;
+        background-image: url('https://cc-prod.scene7.com/is/image/CCProdAuthor/What-is-Stock-Photography_P1_mobile?$pjpeg$&jpegSize=200&wid=720');
+        background-repeat: round;
+        background-size: cover;
+        border-radius: 50%;
+        top: 20vh;
+        left: 95vh;
+    }
+
+    .circleText {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        position: absolute;
+        height: $middle;
+        width: $middle;
+        border-radius: 50%;
+        background-color: $circleCol;
+        top: 70vh;
+        left: 50vh;
+
+        .flex {
+            display: flex;
+            flex-direction: column;
+            width: 600px;
+            row-gap: 2rem;
+
+        }
+
+        h1 {
+            color: $textCol;
+            font-size: $h1Font;
+            font-family: $fontFam;
+        }
+
+        p {
+            color: $textCol;
+            font-size: $pFont;
+            font-family: $fontFam;
+        }
+    }
+
+    .donut {
+        position: absolute;
+        height: $smallest;
+        width: $smallest;
+        border: 50px double $circleCol;
+        border-radius: 50%;
+        top: 120vh;
+        left: 140vh;
+    }
+
+}
+

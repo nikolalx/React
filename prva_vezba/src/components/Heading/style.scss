@@ -1,0 +1,14 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem;
+  background-color: #094223e0;
+  background-image: linear-gradient(to left, #084725, #00000067);
+    
+
+  .svg {
+    width: 45px;
+    cursor: pointer;
+  }
+}
