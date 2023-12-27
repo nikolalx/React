@@ -7,13 +7,39 @@ import img from './/images/img.png'
 import svg from './/images/svg.svg'
 
 //running dogs
-import 
+import dog1 from './/images/dog1.jpg'
+import dog2 from './/images/dog2.jpg'
+import dog3 from './/images/dog3.jpg'
+import dog4 from './/images/dog4.jpg'
+
 
 function App() {
   const nyc = 'About NYC Running Club'
   const pnyc = 'Nibh venenatis cras sed felis eget velit aliquet sagittis id. Tellus pellentesque eu tincidunt tortor aliquam nulla. Lorem Tellus pellentesque eu tincidunt tortor aliquam nulla. Tellus pellentesque eu tincidunt tortor aliquam nulla. '
 
   const running = 'Running and jogging'
+  const dogs = 'dogs'//class for all running dog images
+  const card = 'card' //class for all cards with img, h2 and p
+  const cardContent = 'cardContent'
+
+  const content = {
+    dog1: {
+      h2: 'WORKOUTS',
+      p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.'
+    },
+    dog2: {
+      h2: 'WEIGHT LOSS',
+      p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.'
+    },
+    dog3: {
+      h2: 'JOGGING',
+      p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.'
+    },
+    dog4: {
+      h2: 'HEALTH BENEFITS',
+      p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.'
+    }
+  }
 
   return (
     <>
@@ -37,28 +63,36 @@ function App() {
       <Section2 classNames={'section2'}>
         <h1>{running}</h1>
         <div className='bigCard'>
-          <div>
-            <img src="" alt="" />
-            <h2></h2>
-            <p></p>
+          <div className={card}>
+            <img src={dog1} alt={dog1} className={dogs} />
+            <div className={cardContent}>
+              <h2>{content.dog1.h2}</h2>
+              <p>{content.dog1.p}</p>
+            </div>
           </div>
 
-          <div>
-            <img src="" alt="" />
-            <h2></h2>
-            <p></p>
+          <div className={card}>
+            <img src={dog2} alt={dog2} className={dogs} />
+            <div className={cardContent}>
+              <h2>{content.dog2.h2}</h2>
+              <p>{content.dog2.p}</p>
+            </div>
           </div>
 
-          <div>
-            <img src="" alt="" />
-            <h2></h2>
-            <p></p>
+          <div className={card}>
+            <img src={dog3} alt={dog3} className={dogs} />
+            <div className={cardContent}>
+              <h2>{content.dog3.h2}</h2>
+              <p>{content.dog3.p}</p>
+            </div>
           </div>
 
-          <div>
-            <img src="" alt="" />
-            <h2></h2>
-            <p></p>
+          <div className={card}>
+            <img src={dog4} alt={dog4} className={dogs} />
+            <div className={cardContent}>
+              <h2>{content.dog4.h2}</h2>
+              <p>{content.dog4.p}</p>
+            </div>
           </div>
         </div>
       </Section2>

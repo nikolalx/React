@@ -1,4 +1,61 @@
-$headerCol: #ffab4bd2;
+$headerCol: #fd9a29;
 $h1Font: 4vh;
 $h2Font: 2vh;
+$h2FontCol: #094223e0;
+$fontFam: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
+  Arial, sans-serif;
+$smallest: 300px;
 
+.section2 {
+  margin: 0 2rem 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 2rem;
+
+  h1 {
+    font-family: $fontFam;
+    font-size: $h1Font;
+    color: $headerCol;
+  }
+
+  .bigCard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3rem;
+
+    .card {
+      display: flex;
+      justify-content: center;
+      column-gap: 2rem;
+      width: 900px;
+
+      .cardContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 1rem;
+        width: 220px;
+
+        h2 {
+            font-size: $h2Font;
+            color: $h2FontCol;
+        }
+
+        p {
+            font-style: italic;
+        }
+      }
+    }
+  }
+}
+
+.dogs {
+  width: $smallest;
+  height: $smallest;
+  border-radius: 50%;
+}
