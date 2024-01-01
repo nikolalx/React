@@ -4,10 +4,11 @@ $h2Font: 2vh;
 $h2FontCol: #094223e0;
 $fontFam: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans",
   Arial, sans-serif;
-$smallest: 300px;
+$smallest: 200px;
 
 .section2 {
   margin: 0 2rem 0 2rem;
+  width: 98%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,18 +21,22 @@ $smallest: 300px;
     font-size: $h1Font;
     color: $headerCol;
   }
+}
 
   .bigCard {
     display: flex;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 3rem;
+    row-gap: 1rem;
+    column-gap: 2rem;
 
     .card {
       display: flex;
       justify-content: center;
-      column-gap: 2rem;
-      width: 900px;
+      // column-gap: 2rem;
+        column-gap: 1rem;
+        width: 500px;
 
       .cardContent {
         display: flex;
@@ -39,7 +44,6 @@ $smallest: 300px;
         justify-content: center;
         align-items: center;
         row-gap: 1rem;
-        width: 220px;
 
         h2 {
             font-size: $h2Font;
@@ -52,10 +56,21 @@ $smallest: 300px;
       }
     }
   }
+
+.imgContainer{
+  overflow: hidden;
+  width: 400px;
+  height: $smallest;
+  border: 10px solid $h2FontCol;
+  border-radius: 50%;
 }
 
 .dogs {
-  width: $smallest;
-  height: $smallest;
-  border-radius: 50%;
+  width: 105%;
+  height: 105%;
+  transition: .5s ease;
+}
+
+.dogs:hover {
+transform: scale(1.15);
 }
