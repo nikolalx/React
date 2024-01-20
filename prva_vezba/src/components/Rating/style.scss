@@ -1,0 +1,19 @@
+$size: 30px;
+
+.starsContainer {
+    display: flex;
+    column-gap: .5rem;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.stars {
+    height: $size;
+    width: $size;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.stars:hover {
+    fill: gold;
+}

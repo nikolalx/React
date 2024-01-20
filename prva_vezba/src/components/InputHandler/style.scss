@@ -1,0 +1,19 @@
+
+$h2FontCol: #000000;
+
+.nameContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    width: 1000px;
+}
+
+.inputName, .inputSurname {
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 40px;
+    text-align: center;
+    padding: 7px;
+    font-size: large;
+    color: $h2FontCol;
+}

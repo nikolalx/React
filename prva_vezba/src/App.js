@@ -1,33 +1,42 @@
+import { useState } from 'react';
+
 import './App.scss';
 import Heading from './components/Heading/Heading'
 import Section1 from './components/Section1/Section1'
 import Section2 from './components/Section2/Section2';
-// import Main from './components/Main/Main'
+import Button from './components/Button/Button';
+import InputHandler from './components/InputHandler/InputContainer';
+import Rate from './components/Rating/Rating';
+import CommentSection from './components/CommentSection/CommentSection';
+
 import img from './/images/img.png'
 import svg from './/images/svg.svg'
 
-//running dogs
-// import dog1 from './/images/dog1.jpg'
-// import dog2 from './/images/dog2.jpg'
-// import dog3 from './/images/dog3.jpg'
-// import dog4 from './/images/dog4.jpg'
+const stateChanger = (height, text, setHeight, setText) => {
+  if(height === '0') {
+    setHeight('550px')
+    setText('Collapse Comment Section')
+  } else {
+    setHeight('0')
+    setText('Expand Comment Section')
+  }
+}
+
+const ratingChanger = (rate, setRating) => {
+
+}
 
 
 function App() {
 
-  // const running = 'Running and jogging'
-  // const dogs = 'dogs'//class for all running dog images
-  // const card = 'card' //class for all cards with img, h2 and p
-  // const cardContent = 'cardContent'
+  const [height, setHeight] = useState('0')
+  const [buttonText, setText] = useState('Expand Comment Section')
 
-  // const content = [
-  //   { h2: 'WORKOUTS', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog1 },
-  //   { h2: 'WEIGHT LOSS', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog2 },
-  //   { h2: 'JOGGING', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog3 },
-  //   { h2: 'HEALTH BENEFITS', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog4 }
-  // ];
-
-
+  const [star1, setRating1] = useState('none')
+  const [star2, setRating2] = useState('none')
+  const [star3, setRating3] = useState('none')
+  const [star4, setRating4] = useState('none')
+  const [star5, setRating5] = useState('none')
 
   return (
     <>
@@ -39,9 +48,33 @@ function App() {
         <Section1 classNames={'section1'} />
 
         <section className={'section2'}>
-        <h1>{'Running and Jogging'}</h1>
+          <h1>{'Running and Jogging'}</h1>
           <div className={'bigCard'}>
-            <Section2 classNames={'jas'}/>
+            <Section2 classNames={'jas'} />
+          </div>
+        </section>
+
+        <section className='section3' >
+          <Button classNames={'button'} value={buttonText} onClick={() => {stateChanger(height, buttonText, setHeight, setText)}} />
+          <div className='card' style={{height: height}}>
+
+            <InputHandler classNames={'nameContainer'} />
+
+            <div className={'starsContainer'}>
+            <Rate classNames={'stars'} style={{fill: star1}} onClick={() => {star1 === 'none' ? setRating1('gold') : setRating1('none')}} />
+            <Rate classNames={'stars'} style={{fill: star2}} onClick={() => {star2 === 'none' ? setRating2('gold') : setRating2('none')}} />
+            <Rate classNames={'stars'} style={{fill: star3}} onClick={() => {star3 === 'none' ? setRating3('gold') : setRating3('none')}} />
+            <Rate classNames={'stars'} style={{fill: star4}} onClick={() => {star4 === 'none' ? setRating4('gold') : setRating4('none')}} />
+            <Rate classNames={'stars'} style={{fill: star5}} onClick={() => {star5 === 'none' ? setRating5('gold') : setRating5('none')}} />
+            </div>
+
+            <div className='commentContainer'>
+              <CommentSection classNames={'comment'} />
+              <div className='resetSubmitContainer'>
+                <Button classNames={'reset'} value={'Reset'} />
+                <Button classNames={'submit'} value={'Submit'} />
+              </div>
+            </div>
           </div>
         </section>
       </div>
