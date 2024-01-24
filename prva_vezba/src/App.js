@@ -87,9 +87,6 @@ function App() {
 
     }
 
-    else {
-      return
-    }
   }
 
   const starChanger4 = () => {
@@ -111,9 +108,7 @@ function App() {
       setRating2(true)
       setRating3(true)
       setRating4(true)
-    } else {
-      return
-    }
+    } 
   }
 
   const starChanger5 = () => {
@@ -133,9 +128,7 @@ function App() {
       setRating2(true)
       setRating3(true)
       setRating4(true)
-    } else {
-      return
-    }
+    } 
   }
 
   return (
