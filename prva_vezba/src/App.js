@@ -13,30 +13,130 @@ import img from './/images/img.png'
 import svg from './/images/svg.svg'
 
 const stateChanger = (height, text, setHeight, setText) => {
-  if(height === '0') {
+  if (height === '0') {
     setHeight('550px')
-    setText('Collapse Comment Section')
+    setText('Collapse Comment Editor')
   } else {
     setHeight('0')
-    setText('Expand Comment Section')
+    setText('Expand Comment Editor')
   }
 }
 
-const ratingChanger = (rate, setRating) => {
-
-}
-
+// napraivi funkciju za set state vise od jednog odjednom.
 
 function App() {
 
   const [height, setHeight] = useState('0')
-  const [buttonText, setText] = useState('Expand Comment Section')
+  const [buttonText, setText] = useState('Expand Comment Editor')
 
-  const [star1, setRating1] = useState('none')
-  const [star2, setRating2] = useState('none')
-  const [star3, setRating3] = useState('none')
-  const [star4, setRating4] = useState('none')
-  const [star5, setRating5] = useState('none')
+  const [star1, setRating1] = useState(false)
+  const [star2, setRating2] = useState(false)
+  const [star3, setRating3] = useState(false)
+  const [star4, setRating4] = useState(false)
+  const [star5, setRating5] = useState(false)
+
+  const starChanger1 = () => {
+    if (star2 || star3 || star4 || star5) {
+      setRating2(false)
+      setRating3(false)
+      setRating3(false)
+      setRating4(false)
+      setRating5(false)
+    } else {
+      setRating1(!star1)
+    }
+  }
+
+  const starChanger2 = () => {
+    if(star1 && star2 && !star3 && !star4 && !star5){
+    setRating1(!star1)
+    setRating2(!star2)
+  }else if(star1 && !star2){
+    setRating1(true)
+    setRating2(true)
+  }
+   else if (star3 || star4 || star5) {
+      setRating3(false)
+      setRating4(false)
+      setRating5(false)
+    } else {
+      setRating1(!star1)
+      setRating2(!star2)
+    }
+  }
+
+  const starChanger3 = () => {
+    if (star4 || star5) {
+      setRating4(false)
+      setRating5(false)
+      return
+    }
+    else if (!star1 && !star2 && !star3) {
+      setRating1(!star1)
+      setRating2(!star2)
+      setRating3(!star3)
+    } else if (star1 && star2 && star3) {
+      setRating1(false)
+      setRating2(false)
+      setRating3(false)
+    }
+    else if (star1 || star2) {
+      setRating1(true)
+      setRating2(true)
+      setRating3(true)
+
+    }
+
+    else {
+      return
+    }
+  }
+
+  const starChanger4 = () => {
+    if (star5) {
+      setRating5(false)
+    } else if (!star1 && !star2 && !star3 && !star4) {
+      setRating1(!star1)
+      setRating2(!star2)
+      setRating3(!star3)
+      setRating4(!star4)
+    }
+    else if (star1 && star2 && star3 && star4 && !star5) {
+      setRating1(false)
+      setRating2(false)
+      setRating3(false)
+      setRating4(false)
+    } else if (star1 || star2 || star3) {
+      setRating1(true)
+      setRating2(true)
+      setRating3(true)
+      setRating4(true)
+    } else {
+      return
+    }
+  }
+
+  const starChanger5 = () => {
+    setRating1(!star1)
+    setRating2(!star2)
+    setRating3(!star3)
+    setRating4(!star4)
+    setRating5(!star5)
+    if (star1 && star2 && star3 && star4 && star5) {
+      setRating1(!star1)
+      setRating2(!star2)
+      setRating3(!star3)
+      setRating4(!star4)
+      setRating5(!star5)
+    } else if (star1 || star2 || star3 || star4) {
+      setRating1(true)
+      setRating2(true)
+      setRating3(true)
+      setRating4(true)
+    } else {
+      return
+    }
+  }
 
   return (
     <>
@@ -55,17 +155,17 @@ function App() {
         </section>
 
         <section className='section3' >
-          <Button classNames={'button'} value={buttonText} onClick={() => {stateChanger(height, buttonText, setHeight, setText)}} />
-          <div className='card' style={{height: height}}>
+          <Button classNames={'button'} value={buttonText} onClick={() => { stateChanger(height, buttonText, setHeight, setText) }} />
+          <div className='card' style={{ height: height }}>
 
             <InputHandler classNames={'nameContainer'} />
 
             <div className={'starsContainer'}>
-            <Rate classNames={'stars'} style={{fill: star1}} onClick={() => {star1 === 'none' ? setRating1('gold') : setRating1('none')}} />
-            <Rate classNames={'stars'} style={{fill: star2}} onClick={() => {star2 === 'none' ? setRating2('gold') : setRating2('none')}} />
-            <Rate classNames={'stars'} style={{fill: star3}} onClick={() => {star3 === 'none' ? setRating3('gold') : setRating3('none')}} />
-            <Rate classNames={'stars'} style={{fill: star4}} onClick={() => {star4 === 'none' ? setRating4('gold') : setRating4('none')}} />
-            <Rate classNames={'stars'} style={{fill: star5}} onClick={() => {star5 === 'none' ? setRating5('gold') : setRating5('none')}} />
+              <Rate classNames={'stars'} style={star1 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger1} />
+              <Rate classNames={'stars'} style={star2 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger2} />
+              <Rate classNames={'stars'} style={star3 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger3} />
+              <Rate classNames={'stars'} style={star4 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger4} />
+              <Rate classNames={'stars'} style={star5 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger5} />
             </div>
 
             <div className='commentContainer'>
