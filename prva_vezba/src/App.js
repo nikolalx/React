@@ -35,101 +35,126 @@ function App() {
   const [star4, setRating4] = useState(false)
   const [star5, setRating5] = useState(false)
 
-  const starChanger1 = () => {
-    if (star2 || star3 || star4 || star5) {
-      setRating2(false)
-      setRating3(false)
-      setRating3(false)
-      setRating4(false)
-      setRating5(false)
-    } else {
-      setRating1(!star1)
-    }
-  }
+  //   const starchanger = (id) => {
+  //   switch (id) {
+  //     case 1:
+  //       if(star1 && !star2 && !star3 && !star4 && !star5){
+  //         setRating1(false)
+  //         break;
+  //       }
+  //       setRating1(true)
+  //       setRating2(false)
+  //       setRating3(false)
+  //       setRating4(false)
+  //       setRating5(false)
+  //       break;
+  //     case 2:
+  //       if(star1 && star2 && !star3 && !star4 && !star5){
+  //         setRating1(false)
+  //         setRating2(false)
+  //         break;
+  //       }
+  //       setRating1(true)
+  //       setRating2(true)
+  //       setRating3(false)
+  //       setRating4(false)
+  //       setRating5(false)
 
-  const starChanger2 = () => {
-    if(star1 && star2 && !star3 && !star4 && !star5){
-    setRating1(!star1)
-    setRating2(!star2)
-  }else if(star1 && !star2){
-    setRating1(true)
-    setRating2(true)
-  }
-   else if (star3 || star4 || star5) {
-      setRating3(false)
-      setRating4(false)
-      setRating5(false)
-    } else {
-      setRating1(!star1)
-      setRating2(!star2)
-    }
-  }
+  //       break;
+  //     case 3:
+  //       if (star1 && star2 && star3 && !star4 && !star5) {
+  //         setRating1(false)
+  //         setRating2(false)
+  //         setRating3(false)
+  //         break;
+  //       }
+  //       setRating1(true)
+  //       setRating2(true)
+  //       setRating3(true)
+  //       setRating4(false)
+  //       setRating5(false)
+  //       break;
+  //     case 4:
+  //       if (star1 && star2 && star3 && star4 && !star5) {
+  //         setRating1(false)
+  //         setRating2(false)
+  //         setRating3(false)
+  //         setRating4(false)
+  //         break;
+  //       }
+  //       setRating1(true)
+  //       setRating2(true)
+  //       setRating3(true)
+  //       setRating4(true)
+  //       setRating5(false)
+  //       break;
+  //     case 5:
+  //       if (star1 && star2 && star3 && star4 && star5) {
+  //         setRating1(false)
+  //         setRating2(false)
+  //         setRating3(false)
+  //         setRating4(false)
+  //         setRating5(false)
+  //         break;
+  //       }
+  //       setRating1(true)
+  //       setRating2(true)
+  //       setRating3(true)
+  //       setRating4(true)
+  //       setRating5(true)
+  //       break;
 
-  const starChanger3 = () => {
-    if (star4 || star5) {
-      setRating4(false)
-      setRating5(false)
-      return
-    }
-    else if (!star1 && !star2 && !star3) {
-      setRating1(!star1)
-      setRating2(!star2)
-      setRating3(!star3)
-    } else if (star1 && star2 && star3) {
+  //     default:
+  //       console.log('nemoguce!');
+  //       break;
+  //   }
+  // }
+
+  const starchanger = (id) => {
+
+    if(star1 || star2 || star3 || star4 || star5){
       setRating1(false)
       setRating2(false)
       setRating3(false)
-    }
-    else if (star1 || star2) {
-      setRating1(true)
-      setRating2(true)
-      setRating3(true)
-
-    }
-
-  }
-
-  const starChanger4 = () => {
-    if (star5) {
-      setRating5(false)
-    } else if (!star1 && !star2 && !star3 && !star4) {
-      setRating1(!star1)
-      setRating2(!star2)
-      setRating3(!star3)
-      setRating4(!star4)
-    }
-    else if (star1 && star2 && star3 && star4 && !star5) {
-      setRating1(false)
-      setRating2(false)
-      setRating3(false)
       setRating4(false)
-    } else if (star1 || star2 || star3) {
-      setRating1(true)
-      setRating2(true)
-      setRating3(true)
-      setRating4(true)
-    } 
+      setRating5(false)
+    }
+    switch (id) {
+      case 1:
+        setRating1(true)
+
+        break;
+      case 2:
+        setRating1(true)
+        setRating2(true)
+ 
+        break;
+      case 3:
+        setRating1(true)
+        setRating2(true)
+        setRating3(true)
+
+        break;
+      case 4:
+        setRating1(true)
+        setRating2(true)
+        setRating3(true)
+        setRating4(true)
+        break;
+      case 5:
+        setRating1(true)
+        setRating2(true)
+        setRating3(true)
+        setRating4(true)
+        setRating5(true)
+        break;
+
+      default:
+        console.log('nemoguce!');
+        break;
+    }
   }
 
-  const starChanger5 = () => {
-    setRating1(!star1)
-    setRating2(!star2)
-    setRating3(!star3)
-    setRating4(!star4)
-    setRating5(!star5)
-    if (star1 && star2 && star3 && star4 && star5) {
-      setRating1(!star1)
-      setRating2(!star2)
-      setRating3(!star3)
-      setRating4(!star4)
-      setRating5(!star5)
-    } else if (star1 || star2 || star3 || star4) {
-      setRating1(true)
-      setRating2(true)
-      setRating3(true)
-      setRating4(true)
-    } 
-  }
 
   return (
     <>
@@ -154,11 +179,11 @@ function App() {
             <InputHandler classNames={'nameContainer'} />
 
             <div className={'starsContainer'}>
-              <Rate classNames={'stars'} style={star1 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger1} />
-              <Rate classNames={'stars'} style={star2 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger2} />
-              <Rate classNames={'stars'} style={star3 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger3} />
-              <Rate classNames={'stars'} style={star4 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger4} />
-              <Rate classNames={'stars'} style={star5 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={starChanger5} />
+              <Rate classNames={'stars'} style={star1 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={() => starchanger(1)} />
+              <Rate classNames={'stars'} style={star2 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={() => starchanger(2)} />
+              <Rate classNames={'stars'} style={star3 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={() => starchanger(3)} />
+              <Rate classNames={'stars'} style={star4 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={() => starchanger(4)} />
+              <Rate classNames={'stars'} style={star5 === false ? { fill: 'none' } : { fill: 'gold' }} onClick={() => starchanger(5)} />
             </div>
 
             <div className='commentContainer'>
