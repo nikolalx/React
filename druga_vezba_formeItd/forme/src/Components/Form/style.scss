@@ -1,0 +1,17 @@
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    width: 30%;
+
+    input {
+        border: 1px solid rgba(128, 128, 128, 0.438);
+        border-radius: .5rem;
+        padding: .8rem;
+    }
+}

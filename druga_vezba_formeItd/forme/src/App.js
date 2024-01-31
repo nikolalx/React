@@ -32,7 +32,7 @@ function App() {
     </aside>
 
     <div id={'rightSide'}>
-      <Form />
+      <Form onSubmitInfo={'/*funkcija koja ce da onda hendluje taj objekat koji dobija iz forme. Ta funkcija zove drugu koja ce da dodaje na karticu! */'} />
     </div>
   </>
   );

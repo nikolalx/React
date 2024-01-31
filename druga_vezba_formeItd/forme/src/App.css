@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  
 }
 
 #root {
@@ -30,12 +31,13 @@ aside {
 .card1, .card2 {
   display: flex;
   flex-direction: column;
-  width: 28rem;
+  width: 27rem;
   height: 12rem;
   padding: 1.5rem;
   position: absolute;
-  border: 1px solid #0000000e;
-  border-radius: .9rem;
+  border: 1px solid #00000057;
+  border-radius: 1.6rem;
+  color: #FFF;
 
 }
 
@@ -53,7 +55,7 @@ aside {
   background-size: cover;
   top: 60%;
   left: 55%;
-
+  position: relative;
 }
 
 .circleContainer {
@@ -79,7 +81,8 @@ aside {
 
 .cardNumber {
   font-size: xx-large;
-  letter-spacing: .2rem;
+  letter-spacing: .3rem;
+  align-self: center;
 }
 
 .row {
@@ -90,4 +93,10 @@ aside {
   width: 100%;
   justify-content: space-between;
   font-size: large;
+}
+
+.cvc {
+  position: absolute;
+  right: 13%;
+  bottom: 43%;
 }
