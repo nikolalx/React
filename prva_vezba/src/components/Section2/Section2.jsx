@@ -14,6 +14,7 @@ const Section2 = ({ classNames }) => {
         { h2: 'WEIGHT LOSS', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog2 },
         { h2: 'JOGGING', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog3 },
         { h2: 'HEALTH BENEFITS', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog4 },
+        { h2: 'WHOOPWHOOP', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog5 },
         { h2: 'WHOOPWHOOP', p: 'Sample text. Lorem ipsum dolor sit amet, consectetur adipiscing elit nullam nunc justo sagittis suscipit ultrices.', img: dog5 }
     ];
 
