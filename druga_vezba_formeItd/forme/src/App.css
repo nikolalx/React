@@ -32,7 +32,7 @@ aside {
   display: flex;
   flex-direction: column;
   width: 27rem;
-  height: 12rem;
+  height: 14rem;
   padding: 1.5rem;
   position: absolute;
   border: 1px solid #00000057;
@@ -98,5 +98,5 @@ aside {
 .cvc {
   position: absolute;
   right: 13%;
-  bottom: 43%;
+  bottom: 47%;
 }

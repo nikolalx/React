@@ -6,7 +6,17 @@ import Cards from './Components/Cards/Cards';
 
 function App() {
 
-  const [person, setPerson] = useState([])
+  const [persons, setPerson] = useState([])
+
+  const addPerson = (person) => {
+    setPerson((prevState) => {
+      return [...prevState, person]
+    })
+  }
+
+const submitInfo = (person) => {
+  addPerson(person)
+}
 
   return (<>
     <aside>
@@ -17,7 +27,9 @@ function App() {
             <div id={"emptyCricle"}></div>
           </div>
 
-          <p className={"cardNumber"}>0980 0980 9090 8098</p>
+          <p className={"cardNumber"} key={1}>{persons.map((info) => (
+            cardNumb={info.cardNumb}
+          ))}</p>
 
           <div className={"row nameExpDate"}>
             <p>Nikola ALeksic</p>
@@ -32,7 +44,7 @@ function App() {
     </aside>
 
     <div id={'rightSide'}>
-      <Form onSubmitInfo={'/*funkcija koja ce da onda hendluje taj objekat koji dobija iz forme. Ta funkcija zove drugu koja ce da dodaje na karticu! */'} />
+      <Form onSubmitInfo={submitInfo} />
     </div>
   </>
   );

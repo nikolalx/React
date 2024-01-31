@@ -14,8 +14,8 @@ const Form = ({onSubmitInfo}) => {
         setName(e.target.value)
     }
 
-    const cardNumHandler = (e) => {
-        setCardNum(e.target.value)
+    const cardNumHandler = (event) => {
+        setCardNum(event.target.value)
     }
 
     const monthsHandler = (e) => {
@@ -30,8 +30,8 @@ const Form = ({onSubmitInfo}) => {
         setCvc(e.target.value)
     }
 
-    const submitHandler = (e) => {
-        e.preventDefault()
+    const submitHandler = (event) => {
+        event.preventDefault()
         const info = {name, cardNum, months, years, cvc}
         onSubmitInfo(info)
     }
@@ -45,7 +45,7 @@ const Form = ({onSubmitInfo}) => {
 
             <div className={'column'}>
                 <label htmlFor="cardNum" className={'label'}>CARD NUMBER</label>
-                <input type="tel" id='cardNum' className={'input'} />
+                <input type="tel" id='cardNum' className={'input'} onChange={cardNumHandler} />
             </div>
 
             <div className={'column'}>
@@ -54,11 +54,11 @@ const Form = ({onSubmitInfo}) => {
                     <label htmlFor="cvc" className={'label'}>CVC</label>
                 </div>
                 <div className={'row dateCvcInputs'}>
-                    <input type="tel" id='expDate' maxlength={2} className={'input'} />
-                    <input type="tel" maxlength={2} className={'input'} />
+                    <input type="tel" id='expDate' maxLength={2} className={'input'} onChange={monthsHandler} />
+                    <input type="tel" maxLength={2} className={'input'} onChange={yearsHandler} />
 
 
-                    <input type="tel" maxlength={3} id='cvc' className={'input'} />
+                    <input type="tel" maxLength={3} id='cvc' className={'input'} onChange={cvcHandler} />
                 </div>
             </div>
 
