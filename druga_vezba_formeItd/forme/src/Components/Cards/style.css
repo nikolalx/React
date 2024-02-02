@@ -1,0 +1,73 @@
+.card1, .card2 {
+    display: flex;
+    flex-direction: column;
+    width: 27rem;
+    height: 14rem;
+    padding: 1.5rem;
+    position: absolute;
+    border: 1px solid #00000057;
+    border-radius: 1.6rem;
+    color: #FFF;
+  
+  }
+  
+  .card1 {
+    row-gap: 2rem;
+    background: url('../../img/bg-card-front.png');
+    background-size: cover;
+    top: 20%;
+    left: 40%;
+  
+  }
+  
+  .card2 {
+    background: url('../../img/bg-card-back.png');
+    background-size: cover;
+    margin-top: 90%;
+    left: 55%;
+    position: relative;
+  }
+  
+  .circleContainer {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 3rem; */
+    column-gap: .5rem;
+  }
+  
+  #filledCircle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  
+  #emptyCricle {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 50%;
+  }
+  
+  .cardNumber {
+    font-size: xx-large;
+    letter-spacing: .3rem;
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+  
+  .row {
+    display: flex;
+  }
+  
+  .nameExpDate {
+    width: 100%;
+    justify-content: space-between;
+    font-size: large;
+  }
+  
+  .cvc {
+    position: absolute;
+    right: 13%;
+    bottom: 47%;
+  }

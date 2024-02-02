@@ -32,8 +32,8 @@ const Form = ({onSubmitInfo}) => {
 
     const submitHandler = (event) => {
         event.preventDefault()
-        const info = {name, cardNum, months, years, cvc}
-        onSubmitInfo(info)
+        const person = {name, cardNum, months, years, cvc}
+        onSubmitInfo(person)
     }
 
     return (
@@ -45,7 +45,7 @@ const Form = ({onSubmitInfo}) => {
 
             <div className={'column'}>
                 <label htmlFor="cardNum" className={'label'}>CARD NUMBER</label>
-                <input type="tel" id='cardNum' className={'input'} onChange={cardNumHandler} />
+                <input type="number" id='cardNum' max={16} className={'input'} onChange={cardNumHandler} />
             </div>
 
             <div className={'column'}>
@@ -54,11 +54,11 @@ const Form = ({onSubmitInfo}) => {
                     <label htmlFor="cvc" className={'label'}>CVC</label>
                 </div>
                 <div className={'row dateCvcInputs'}>
-                    <input type="tel" id='expDate' maxLength={2} className={'input'} onChange={monthsHandler} />
-                    <input type="tel" maxLength={2} className={'input'} onChange={yearsHandler} />
+                    <input type="number" id='expDate' maxLength={2} className={'input'} onChange={monthsHandler} />
+                    <input type="number" maxLength={2} className={'input'} onChange={yearsHandler} />
 
 
-                    <input type="tel" maxLength={3} id='cvc' className={'input'} onChange={cvcHandler} />
+                    <input type="number" maxLength={3} id='cvc' className={'input'} onChange={cvcHandler} />
                 </div>
             </div>
 
