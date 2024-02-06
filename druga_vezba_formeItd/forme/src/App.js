@@ -1,26 +1,25 @@
-import './App.css';
-import { useState } from 'react';
+import "./App.css";
+import { useState } from "react";
 
-import Form from './Components/Form/Form';
-import Cards from './Components/Cards/Cards';
-import Container from './Components/Cards/Container';
+import Form from "./Components/Form/Form";
+import Cards from "./Components/Cards/Cards";
+import Container from "./Components/Cards/Container";
 
 function App() {
-
-  const [persons, setPerson] = useState({})
+  const [persons, setPerson] = useState({});
 
   const addPerson = (person) => {
-    setPerson(person) 
-   }
+    setPerson(person);
+  };
 
   const submitInfo = (person) => {
-    addPerson(person)
-  }
+    addPerson(person);
+  };
 
-  return (<>
-    <aside>
-      <Container>
-
+  return (
+    <>
+      <aside>
+        <Container>
           <Cards
             name={persons.name}
             cardNum={persons.cardNum}
@@ -28,14 +27,13 @@ function App() {
             years={persons.years}
             cvc={persons.cvc}
           />
+        </Container>
+      </aside>
 
-      </Container>
-    </aside>
-
-    <div id={'rightSide'}>
-      <Form onSubmitInfo={submitInfo} />
-    </div>
-  </>
+      <div id={"rightSide"}>
+        <Form onSubmitInfo={submitInfo} />
+      </div>
+    </>
   );
 }
 
