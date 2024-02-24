@@ -1,22 +1,39 @@
 import React from "react";
 import { useState } from "react";
 
-const Select = ({data, className}) => {
+const Select = ({ data, className, onSubmitHandler }) => {
+  const [dinoId, setDinoId] = useState('Please Choose');
 
-  const [dino, setDino] = useState('')
-
-  const dinoHandler = (e) => {
-    setDino(e.target.value)
-    console.log(dino)
-  }
+const dinoHandler = (e) => {
+  setDinoId(e.target.value)
+  console.log(dinoId)
+  onSubmitHandler(dinoId)
+}
 
   return (
     <>
-      <select name="dinos" id="dinos" value={dino} className={className} key={''} onChange={(e) => dinoHandler(e)}>
-        <option defaultValue={'Please choose'} selected disabled>Please choose</option>
-      {data.map((dino) => {
-        return <option key={dino.id} value={dino.name}>{dino.name}</option>
-      })}
+      <select
+        name="dinos"
+        id="dinos"
+        value={dinoId}
+        className={className}
+        onChange={dinoHandler}
+      >
+        <option
+          key={0}
+          name={"none"}
+          value={'Please choose'}
+          disabled
+        >
+          Please choose
+        </option>
+        {data.map((dinos) => {
+          return (
+            <option key={dinos.id} name={dinos.name} value={dinos.id}>
+              {dinos.name}
+            </option>
+          );
+        })}
       </select>
     </>
   );
