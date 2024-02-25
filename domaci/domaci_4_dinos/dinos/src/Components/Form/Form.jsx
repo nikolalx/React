@@ -55,7 +55,7 @@ const Form = ({ onWholeOrderHandler, onlSHandler }) => {
         id="napomena"
         onChange={commentHandler}
       ></textarea>
-      <button
+      <input
         className="h-[40px] w-[100px] p-2 !bg-green-900 rounded-2xl self-center mt-2 cursor-pointer"
         type="submit" onClick={() => onlSHandler(order)}
       />
