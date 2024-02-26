@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
 
-  const [wholeOrder, setWholeOrder] = useState()
+  const [wholeOrder, setWholeOrder] = useState([])
 
   const wholeOrderHandler = (order) => {
     order.buyer && order.comment && order.img ? setWholeOrder(order) : alert('The order is not complete.')
@@ -23,7 +23,7 @@ function App() {
     <>
       <div className="flex h-screen w-screen bg-dino-green flex-col content-center flex-wrap">
         <div className='h-[22rem] w-[60rem] bg-[url("./image/marko-transformed.jpeg")] bg-cover '>
-          <Form onWholeOrderHandler={wholeOrderHandler} onlSHandler={lSHandler}/>
+          <Form onWholeOrderHandler={wholeOrderHandler} onlSHandler={lSHandler} wholeOrder={wholeOrder}/>
         </div>
         {wholeOrder ? <Card>
           <div className="flex">
@@ -37,6 +37,13 @@ function App() {
               <p>Cena: {wholeOrder?.cena}</p>
             </div>
           </div>
+
+          <button
+        className="h-[40px] w-[100px] p-2 !bg-yellow-800 rounded-2xl self-center mt-2 cursor-pointer"
+        onClick={() => lSHandler(order)}
+      >
+        List Orders
+      </button>
         </Card> : ''}
       </div>
     </>

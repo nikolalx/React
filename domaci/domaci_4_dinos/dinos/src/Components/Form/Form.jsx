@@ -4,21 +4,21 @@ import json from "../../JSON/data.json";
 
 import Select from "../Select";
 
-const Form = ({ onWholeOrderHandler, onlSHandler }) => {
+const Form = ({ onWholeOrderHandler, wholeOrder }) => {
   const [order, setOrder] = useState({});
-  const [dinoObj, setDinoObj] = useState()
   const [buyer, setBuyer] = useState();
   const [comment, setComment] = useState();
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    let obj = {...dinoObj, buyer, comment}
-    setOrder(obj)
-    onlSHandler(order)
+
+    setOrder(obj);
+    onWholeOrderHandler(order);
   };
 
   const orderHandler = (dino) => {
-    setDinoObj(dino);
+    let obj = { ...dino, buyer, comment };
+    wholeOrder.push(obj);
   };
 
   const buyerHandler = (e) => {
@@ -57,16 +57,12 @@ const Form = ({ onWholeOrderHandler, onlSHandler }) => {
       ></textarea>
       <input
         className="h-[40px] w-[100px] p-2 !bg-green-900 rounded-2xl self-center mt-2 cursor-pointer"
-        type="submit" onClick={() => onlSHandler(order)}
+        type="submit"
       />
-      <button
-        className="h-[40px] w-[100px] p-2 !bg-yellow-800 rounded-2xl self-center mt-2 cursor-pointer"
-        onClick={() => onWholeOrderHandler(order)}
-      >
-        List Orders
-      </button>
     </form>
   );
 };
 
 export default Form;
+
+//prosledjujes Array iz App-a Formi. Iz Selecta prosledjujes klasika objekat dinosaurusa u Formu. U Formi se stvara novi objekat od tog dinosaurusa, buyer stejta i comment stejta. Nakon toga se .pushu-je u array uz App-a. Nakon toga se setuje array na Local Storage. I u App-u button ispisuje ceo array iz Local Storage-a.
