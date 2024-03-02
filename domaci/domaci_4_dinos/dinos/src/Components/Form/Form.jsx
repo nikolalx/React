@@ -4,7 +4,7 @@ import json from "../../JSON/data.json";
 
 import Select from "../Select";
 
-const Form = ({ onWholeOrderHandler, wholeOrder }) => {
+const Form = ({onlSHandler }) => {
   const [order, setOrder] = useState({});
   const [buyer, setBuyer] = useState();
   const [comment, setComment] = useState();
@@ -12,13 +12,12 @@ const Form = ({ onWholeOrderHandler, wholeOrder }) => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    setOrder(obj);
-    onWholeOrderHandler(order);
+    onlSHandler(order, buyer, comment);
+    // onWholeOrderHandler(order);
   };
 
   const orderHandler = (dino) => {
-    let obj = { ...dino, buyer, comment };
-    wholeOrder.push(obj);
+    setOrder(dino)
   };
 
   const buyerHandler = (e) => {
