@@ -3,14 +3,68 @@
     padding: 0;
     box-sizing: border-box;
     color: #FFF;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#section {
-    background-image: url(./assets/images/prvePlanine.jpeg);
+#section1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)), url(./assets/images/prvePlanine.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
+
+#section2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)), url(./assets/images/drugePlanine.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#section3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)), url(./assets/images/trecePlanine.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#section4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.45)), url(./assets/images/cetvrtePlanine.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cards > img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-position: 50% 50%;
+    height: 100%;
+    width: 100%;
+    transition: ease 0.3s;
+} 
+
+.cards:hover img {
+    transform: scale(1.15);
+
+}
+
+#links {
+    font-size: x-large;
+    margin-left: 1rem;
+}
+
+.cards {
+    height: 460px;
+    width: 360px;
+    overflow: hidden;
+}
+
+
 
 h1 {
     font-size: 8rem;
